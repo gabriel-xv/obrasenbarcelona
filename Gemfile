@@ -33,6 +33,8 @@ gem 'devise'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'cloudinary', '~> 1.16.0'
 gem 'font-awesome-sass'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '~> 2.0'
 gem 'simple_form'
 group :development, :test do
   gem 'pry-byebug'
