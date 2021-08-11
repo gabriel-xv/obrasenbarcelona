@@ -10,22 +10,23 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @new_article = Article.new
   end
 
   def create
-    @article = Article.new(article_params)
+    @new_article = Article.new(article_params)
 
-    if @article.save
-      redirect_to @article, notice: "Se ha creado una nueva publicación."
+    if @new_article.save
+      redirect_to article_path(@new_article)
     else
       render :new
     end
   end
 
   def update
-    if @article.update(article_params)
-      redirect_to @article, notice: "Se ha editado la publicación correctamente."
+    @update_article = Article.find(params[:id])
+    if @update_article.update(article_params)
+      redirect_to article_path(@update_article)
     else
       render :edit
     end
