@@ -15,7 +15,7 @@
 .banner-info {
   min-width: 45%;
   max-width: 45%;
-  min-height: 75%;
+  min-height: 70%;
   margin-top: 6%;
   margin-left: 20px;
   position: absolute;
@@ -57,6 +57,7 @@ body {
 } i {
   color: #F9f9f9;
   font-size: 3.5vw;
+  margin-bottom: 4px;
 }
 
 
@@ -86,10 +87,12 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
-.cards__card {
+.cards-card {
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    margin-top: 20px;
 
     > img {
         object-fit: cover;
@@ -98,6 +101,63 @@ body {
     }
 }
 
-.cards__description {
+.cards-description {
     padding: 0 20px 10px 20px;
+}
+
+.cards-container {
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-top: 70px;
+  .categories-title { color: #3d3d3e; }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  padding: 20px;
+}
+
+
+// RESPONSIVENESS HOME PAGE
+
+@media (max-width: 990px) {
+  /* For a screen < 720px, this CSS will be read */
+  .cards-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 765px) {
+  /* For a screen < 720px, this CSS will be read */
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 539px) {
+  /* For a screen < 720px, this CSS will be read */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.category-card {
+  background: white;
+  padding: 14px 15px;
+  border: 2px solid #3d3d3e;
+  color: white;
+  text-align: center;
+  color: #3d3d3e;
+  h3 {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  &:hover {
+    transition-duration: 0.15s;
+    background: #F9f9f9;
+    color: #d63553;
+    border: 2px #F9f9f9;
+    h3 { font-weight: 700; }
+  }
 }
