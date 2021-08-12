@@ -39,8 +39,23 @@
   width: 100%;
   height: 160px;
   color: #F9f9f9;
+  align-items: center;
+  justify-content: space-around;
 }
 
 body {
   background: #F9f9f9;
+}
+
+.servicios-strip {
+  text-align: center;
+} i {
+  color: #F9f9f9;
+  font-size: 4vw;
+}
+
+
+.servi-info {
+  text-align: center;
+  margin-right: 40px;
 }
