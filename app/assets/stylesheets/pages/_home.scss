@@ -1,33 +1,31 @@
 // Specific CSS for your home-page
-.banner-home {
-  display: table;
-  height: auto;
-  position: relative;
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
 }
 
-.banner-image img {
-  max-width: 85%;
-  height: auto;
-  float: right;
-  position: relative;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .banner-info {
-  min-width: 45%;
-  max-width: 45%;
-  min-height: 70%;
-  margin-top: 6%;
-  margin-left: 20px;
-  position: absolute;
-  z-index: 1;
   backdrop-filter: blur(10px) saturate(163%);
   -webkit-backdrop-filter: blur(10px) saturate(163%);
   background-color: rgba(160, 160, 160, 0.47);
   border: 1px solid rgba(255, 255, 255, 0.125);
-  h1 {
-    margin: 8px;
-    margin-top: 16px;
-  }
+  padding: 20px;
 }
 
 .home-body-content {
