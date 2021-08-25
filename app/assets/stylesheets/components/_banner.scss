@@ -22,7 +22,7 @@
   background-color: rgba(160, 160, 160, 0.47);
   border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 20px;
-  margin-top: -72px;
+  margin-top: -100px;
 }
 
 .btn-flat {
@@ -31,4 +31,48 @@
   font-weight: bold;
   margin-top: 8px;
   padding: 16px;
+}
+
+.servi-card {
+  background: #3d3d3e;
+}
+
+.servicios-strip {
+  height: 140px;
+  color: #F9f9f9;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 1.6vw;
+  line-height: 1em;
+}
+
+.servicios-strip {
+} i {
+  color: #F9f9f9;
+  font-size: 2vw;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 1000px) {
+  .servicios-strip {
+  } i {
+    color: #F9f9f9;
+    font-size: 5vw;
+    margin-bottom: 3.5px;
+  }
+}
+
+@media (max-width: 539px) {
+  .servicios-strip {
+  } i {
+    color: #F9f9f9;
+    font-size: 4vw;
+    margin-bottom: 4px;
+  }
+}
+
+.servi-info {
+  text-align: center;
+  margin-right: 0;
 }
