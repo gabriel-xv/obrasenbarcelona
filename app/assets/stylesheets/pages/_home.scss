@@ -1,33 +1,4 @@
 // Specific CSS for your home-page
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-}
-
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.banner-info {
-  backdrop-filter: blur(10px) saturate(163%);
-  -webkit-backdrop-filter: blur(10px) saturate(163%);
-  background-color: rgba(160, 160, 160, 0.47);
-  border: 1px solid rgba(255, 255, 255, 0.125);
-  padding: 20px;
-  margin-top: -72px;
-}
 
 .servi-card {
   background: #3d3d3e;
