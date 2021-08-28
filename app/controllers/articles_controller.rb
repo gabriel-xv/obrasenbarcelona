@@ -10,14 +10,15 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @new_article = Article.new
+    @article = Article.new
   end
 
   def create
-    @new_article = Article.new(article_params)
+    @article = Article.new(article_params)
 
-    if @new_article.save
-      redirect_to article_path(@new_article)
+    if @article.save
+      create_pictures
+      redirect_to article_path(@article)
     else
       render :new
     end
@@ -39,6 +40,13 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :rich_description, :category, photos: [])
+    params.require(:article).permit(:title, :rich_description, :category, photos: [], pictures: [])
+  end
+
+  def create_pictures
+    photos = params.dig(:article, :pictures) || []
+    photos.each do |photo|
+      @article.pictures.create(photo: photo)
+    end
   end
 end
