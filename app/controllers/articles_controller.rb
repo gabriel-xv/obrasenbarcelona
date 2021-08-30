@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      create_pictures
       redirect_to article_path(@article)
     else
       render :new
@@ -40,7 +39,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :rich_description, :category, photos: [], pictures: [])
+    params.require(:article).permit(:title, :rich_description, :category, photos: [])
   end
 
   def create_pictures
