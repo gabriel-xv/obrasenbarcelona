@@ -10,8 +10,8 @@
 
 <h5>Photos</h5>
 <ul>
-  <% @article.pictures.each do |picture| %>
-    <li><%= cl_image_tag(picture.photo, width: 400, height: 300, crop: :fill) %></li>
+  <% @article.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 </ul>
 
