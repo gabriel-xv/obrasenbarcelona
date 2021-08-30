@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 52px 0;
   h1 {
     margin: 0;
     color: white;
@@ -17,12 +17,18 @@
 }
 
 .banner-info {
-  backdrop-filter: blur(10px) saturate(163%);
-  -webkit-backdrop-filter: blur(10px) saturate(163%);
-  background-color: rgba(160, 160, 160, 0.47);
+  backdrop-filter: blur(5px) saturate(132%);
+  -webkit-backdrop-filter: blur(5px) saturate(132%);
+  background-color: rgba(17, 25, 40, 0.73);
   border: 1px solid rgba(255, 255, 255, 0.125);
-  padding: 20px;
-  margin-top: -130px;
+  padding: 28px;
+  margin-top: 8px;
+}
+
+@media (max-width: 580px) {
+  .banner-info {
+    margin-top: -40px;
+  }
 }
 
 .btn-flatt {

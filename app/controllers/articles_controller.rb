@@ -41,11 +41,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :rich_description, :category, photos: [])
   end
-
-  def create_pictures
-    photos = params.dig(:article, :pictures) || []
-    photos.each do |photo|
-      @article.pictures.create(photo: photo)
-    end
-  end
 end
