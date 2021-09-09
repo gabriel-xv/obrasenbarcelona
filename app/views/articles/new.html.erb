@@ -20,6 +20,22 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
 
+    <%= f.simple_fields_for :items do |i| %>
+
+      <div class="form-inputs">
+        <%= i.input :title %>
+      </div>
+
+      <div class="form-inputs">
+        <%= i.input :comment %>
+      </div>
+
+      <div class="form-inputs">
+        <%= i.input :photo, as: :file %>
+      </div>
+
+    <% end %>
+
     <div class="form-actions">
       <%= f.button :submit %>
     </div>
