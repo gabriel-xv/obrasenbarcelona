@@ -26,8 +26,6 @@ import "cocoon";
 import { Application } from "stimulus"
 
 // Internal imports, e.g:
-import { addItem } from '../packs/addItem.js'
-
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
