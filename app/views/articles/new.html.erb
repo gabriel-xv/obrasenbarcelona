@@ -26,15 +26,15 @@
           <%= render "item_fields", :f => t %>
         <% end %>
 
-        <div>
+        <div class="add-item-btn">
           <br>
-          <%= link_to_add_association "Add item", f, :items %>
+          <%= link_to_add_association "+", f, :items %>
         </div>
       </div>
 
       <div class="form-article-btn">
         <br>
-        <%= f.submit %>
+        <%= f.button :submit, 'Publicar' %>
       </div>
     </div>
   <% end %>
