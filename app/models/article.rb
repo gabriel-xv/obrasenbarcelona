@@ -5,6 +5,5 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :items
   has_many_attached :photos
   has_rich_text :rich_description
-  validates_presence_of :title, :rich_description, :category
   validates :category, inclusion: { in: CATEGORIES }
 end
