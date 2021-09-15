@@ -11,16 +11,22 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @article.items.build
+    @article.items.build
   end
 
   def create
     @article = Article.new(article_params)
-
+    @article.user = current_user
     if @article.save
       redirect_to article_path(@article)
     else
       render :new
     end
+  end
+
+  def edit
+    @edit_article = Article.find(params[:id])
   end
 
   def update
@@ -39,6 +45,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :rich_description, :category, photos: [])
+    params.require(:article).permit(:title, :description, :category, photos: [], items_attributes: [:id, :title, :comment, :photo])
   end
 end

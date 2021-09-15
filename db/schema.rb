@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_084554) do
+ActiveRecord::Schema.define(version: 2021_09_08_180906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,30 @@ ActiveRecord::Schema.define(version: 2021_08_28_084554) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "type"
+    t.bigint "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_categories_on_article_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_images_on_category_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "comment"
+    t.bigint "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_items_on_article_id"
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.string "photo"
     t.bigint "article_id", null: false
@@ -79,5 +103,8 @@ ActiveRecord::Schema.define(version: 2021_08_28_084554) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "users"
+  add_foreign_key "categories", "articles"
+  add_foreign_key "images", "categories"
+  add_foreign_key "items", "articles"
   add_foreign_key "pictures", "articles"
 end
