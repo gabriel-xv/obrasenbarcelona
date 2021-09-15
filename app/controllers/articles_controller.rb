@@ -7,11 +7,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @items = @article.items
   end
 
   def new
     @article = Article.new
-    @article.items.build
     @article.items.build
   end
 
@@ -45,6 +45,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :category, photos: [], items_attributes: [:id, :title, :comment, :photo])
+    params.require(:article).permit(:title, :description, :category, photos: [], items_attributes: [:id, :title, :comment, :photo, :_destroy])
   end
 end

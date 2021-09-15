@@ -1,20 +1,43 @@
 <div class="container">
 
-  <h2>Crea una nueva publicación</h2>
-
   <%= simple_form_for(@article) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :category, collection: Article::CATEGORIES %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.simple_fields_for :items do |i| %>
-        <div id=”fieldsetContainer”>
-          <fieldset id="0">
-            <%= i.input :title %>
-         </fieldset>
+    <br>
+    <br>
+    <div>
+      <div class="article-main-form">
+
+        <div class="form-article">
+          <%= f.input :title %>
         </div>
-      <% end%>
-      <%= f.button :submit %>
+
+        <div class="form-article">
+          <%= f.input :category, collection: Article::CATEGORIES %>
+        </div>
+
+        <div class="form-article">
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        </div>
+
+      </div>
+
+
+      <div class="form-article">
+        <%= f.simple_fields_for :items do |t| %>
+          <%= render "item_fields", :f => t %>
+        <% end %>
+
+        <div>
+          <br>
+          <%= link_to_add_association "Add item", f, :items %>
+        </div>
+      </div>
+
+      <div class="form-article-btn">
+        <br>
+        <%= f.submit %>
+      </div>
+    </div>
   <% end %>
 
 </div>
-<button id="itemadd">Añadir</button>
+
