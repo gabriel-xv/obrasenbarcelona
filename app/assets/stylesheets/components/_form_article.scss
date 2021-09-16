@@ -2,6 +2,8 @@
   background-color:#3d3d3e;
   padding: 28px;
   margin-bottom: 36px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  border: 1px solid rgba(0,0,0,0.1);
   label {
     color: #F9f9f9;
   }
@@ -35,4 +37,13 @@
   font-weight: bolder;
   font-size: 48px;
   border-radius: 50%;
+  padding: 8px;
+}
+
+.upload-photo {
+  padding: 16px 24px;
+  cursor: pointer;
+  background-image: linear-gradient(-180deg, #fff 20%, #f5f5f5 80%);
+  color: #333333 !important;
+  border: .5px solid #D5D5D5;
 }
