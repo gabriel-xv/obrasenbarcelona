@@ -25,11 +25,10 @@
         <%= f.simple_fields_for :items do |t| %>
           <%= render "item_fields", :f => t %>
         <% end %>
-
-        <div class="add-item-btn">
-          <br>
+        <div class="btn-circle">
           <%= link_to_add_association "+", f, :items %>
         </div>
+
       </div>
 
       <div class="form-article-btn">
