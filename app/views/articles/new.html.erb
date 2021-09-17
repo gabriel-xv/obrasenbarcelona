@@ -1,42 +1,51 @@
 <div class="container">
 
-  <%= simple_form_for(@article) do |f| %>
-    <br>
-    <br>
-    <div>
-      <div class="article-main-form">
+  <h3 class="mt-4">Crea una nueva publicación</h3>
+  <div class="article-complete-form mt-1">
+    <%= simple_form_for(@article) do |f| %>
+      <br>
+      <br>
+      <div>
+        <div class="article-main-form">
+
+          <div class="form-article">
+            <%= f.input :title %>
+          </div>
+
+          <div class="form-article">
+            <%= f.input :description %>
+          </div>
+
+          <div class="form-article">
+            <%= f.input :category, collection: Article::CATEGORIES %>
+          </div>
+
+          <div class="form-article">
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          </div>
+
+        </div>
+
 
         <div class="form-article">
-          <%= f.input :title %>
+          <%= f.simple_fields_for :items do |t| %>
+            <%= render "item_fields", :f => t %>
+          <% end %>
+          <div class="btn-circle">
+            <%= link_to_add_association "+", f, :items %>
+          </div>
+
         </div>
 
-        <div class="form-article">
-          <%= f.input :category, collection: Article::CATEGORIES %>
+        <div class="form-article-btn">
+          <br>
+          <%= f.button :submit, 'Publicar' %>
         </div>
-
-        <div class="form-article">
-          <%= f.input :photos, as: :file, input_html: { multiple: true }, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: 'Subir fotos' %>
-        </div>
-
       </div>
+    <% end %>
 
+  </div>
 
-      <div class="form-article">
-        <%= f.simple_fields_for :items do |t| %>
-          <%= render "item_fields", :f => t %>
-        <% end %>
-        <div class="btn-circle">
-          <%= link_to_add_association "+", f, :items %>
-        </div>
-
-      </div>
-
-      <div class="form-article-btn">
-        <br>
-        <%= f.button :submit, 'Publicar' %>
-      </div>
-    </div>
-  <% end %>
 
 </div>
 

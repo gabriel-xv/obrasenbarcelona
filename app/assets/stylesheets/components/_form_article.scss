@@ -14,10 +14,19 @@
   margin-top: 70px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   padding: 28px;
+  .remove_fields {
+    color: #A60303!important;
+    font-weight: bolder;
+    position: relative;
+    float: right;
+    margin-right: 32px;
+  }
 }
 
 .form-article-btn {
   text-align: center;
+  margin-bottom: 24px;
+  margin-top: 16px;
   input {
     background-color: #A60303;
     color: #F9f9f9 !important;
@@ -26,7 +35,7 @@
     padding: 16px;
     border: none;
     border-radius: 5px 25px;
-    width: 75%;
+    width: 100%;
   }
 }
 
@@ -47,10 +56,7 @@
     float: right;
 }
 
-.upload-photo {
-  padding: 16px 24px;
-  cursor: pointer;
-  background-image: linear-gradient(-180deg, #fff 20%, #f5f5f5 80%);
-  color: #333333 !important;
-  border: .5px solid #D5D5D5;
+.article-complete-form .new_article {
+  margin-top: -32px;
 }
+
