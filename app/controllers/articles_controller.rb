@@ -1,8 +1,18 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @articles = Article.all
+    if params[:query].present?
+      sql_query = " \
+      articles.title ILIKE :query \
+      OR articles.description ILIKE :query \
+      OR articles.category ILIKE :query \
+      "
+      @articles = Article.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @articles = Article.all
+    end
   end
 
   def show

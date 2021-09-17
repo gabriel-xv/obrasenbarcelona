@@ -24,18 +24,23 @@
     </div>
   </div>
 
+  <div class="article-description-box">
+    <%= @article.description %>
+  </div>
 
-  <%= @article.description %>
-
-  <h3>Proyecto de reforma</h3>
-
-  <h5>Photos</h5>
-  <% @article.items.each do |item| %>
-    <%= item.title %>
-    <%= item.comment %>
-    <% if item.photo.present? %>
-      <%= cl_image_tag item.photo.key %>
+  <div class="item-card">
+    <% @article.items.each do |item| %>
+      <h3><%= item.title %></h3>
+      <div class="img-desc-card">
+        <% if item.photo.present? %>
+          <%= cl_image_tag item.photo.key %>
+        <% end %>
+        <div class="ml-3">
+          <%= item.comment %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+
 </div>
 
