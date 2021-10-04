@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :articles
   resources :contacts, only: [:new, :create]
+  get "/pages/:page" => "pages#show"
 end

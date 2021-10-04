@@ -13,18 +13,24 @@
       <div class="servi-info">
         <h5>Nuestros servicios</h5>
       </div>
-      <div class="serv-const">
-        <i class="fas fa-hard-hat"></i>
-        <p>Construcción</p>
-      </div>
-      <div class="serv-refor">
-        <i class="fas fa-drafting-compass"></i>
-        <p>Reformas</p>
-      </div>
-      <div class="serv-rehab">
-        <i class="fas fa-paint-roller"></i>
-        <p>Rehabilitación</p>
-      </div>
+      <%= link_to "pages/construccion" do %>
+        <div class="serv-const">
+          <i class="fas fa-hard-hat"></i>
+          <p>Construcción</p>
+        </div>
+      <% end %>
+      <%= link_to "pages/reformas" do %>
+        <div class="serv-refor">
+          <i class="fas fa-drafting-compass"></i>
+          <p>Reformas</p>
+        </div>
+      <% end %>
+      <%= link_to "pages/rehabilitacion" do %>
+        <div class="serv-rehab">
+          <i class="fas fa-paint-roller"></i>
+          <p>Rehabilitación</p>
+        </div>
+      <% end %>
     </div>
   </div>
 <div class="container">
