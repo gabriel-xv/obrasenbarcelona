@@ -2,6 +2,8 @@
     <h1 class="mb-4">Déjanos tu mensaje</h1>
     <div class="contact-layout">
       <div class="contact-forms">
+        <p class="mb-2">Puedes ponerte en contacto con nosotros al teléfono <b style="font-weight: bolder;">935 316 431</b> o dejarnos un mensaje a través del siguiente formulario.</p>
+        <p>Te asesoraremos para ofrecerte una propuesta personalizada.</p>
         <%= form_for @contact do |f| %>
           <div class="">
             <%= f.text_field  :name, required: true, class: "contact-form-text-small",
