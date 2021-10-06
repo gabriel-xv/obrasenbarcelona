@@ -37,7 +37,7 @@
   <div class="last-projects-landing mt-4 ml-4">
     <h2>Últimos proyectos</h2>
     <div class="cards">
-      <% @articles.each do |article| %>
+      <% @articles.last(6).each do |article| %>
         <%= link_to article_path(article.id) do %>
           <div class="cards-card">
             <% if article.photos.present? %>
