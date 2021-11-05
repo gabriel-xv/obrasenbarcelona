@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@article.title}" %>
+<% content_for :meta_description, @article.description %>
+<% content_for :meta_image, cl_image_path(@article.photos.first) %>
+
 <div class="container">
 
   <div class="main-info-card mb-5 mt-4">
